@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#f4eee1" />
+<title>矛盾分析室 · 把乱麻问题拆成可以下手的一条</title>
+<meta name="description" content="用《矛盾论》《实践论》的方法，把现实问题拆成矛盾清单、主要矛盾、转化条件和可检验的行动。由你提问，AI 拆解。" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%23b02c22'/%3E%3Ctext x='16' y='23' font-size='19' text-anchor='middle' fill='%23fff3e6' font-family='serif'%3E%E7%9F%9B%3C/text%3E%3C/svg%3E" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="矛盾分析室" />
+<meta property="og:title" content="矛盾分析室 · 把乱麻问题拆成可以下手的一条" />
+<meta property="og:description" content="清点事实、列出矛盾、找出主要矛盾与主要方面、给出转化条件和可检验的三步行动。" />
+<meta name="twitter:card" content="summary" />
+<link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+<div class="paper-grain" aria-hidden="true"></div>
+<noscript><p class="noscript">这个工具要靠 JavaScript 才能把你的问题送去拆解。请打开浏览器的脚本权限。</p></noscript>
+
+<header class="masthead">
+  <a class="brand" href="#" data-nav="ask">
+    <span class="seal"><i>矛</i></span>
+    <span class="brand-text">
+      <strong>矛盾分析室</strong>
+      <em>把一团乱麻，拆成可以下手的一条</em>
+    </span>
+  </a>
+  <nav class="nav">
+    <button class="nav-item is-active" data-nav="ask">提问</button>
+    <button class="nav-item" data-nav="cases">我的分析<span class="count" id="caseCount"></span></button>
+    <button class="nav-item" data-nav="method">方法</button>
+    <button class="gear" id="openSettings" title="设置模型" aria-label="设置">
+      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <circle cx="12" cy="12" r="3.2" /><path d="M12 3.2v2.4M12 18.4v2.4M20.8 12h-2.4M5.6 12H3.2M18.2 5.8l-1.7 1.7M7.5 16.5l-1.7 1.7M18.2 18.2l-1.7-1.7M7.5 7.5L5.8 5.8" stroke-linecap="round" />
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<main class="shell">
+
+  <!-- ======================= 提问 ======================= -->
+  <section class="view" id="view-ask">
+
+    <div class="resume" id="resumeBar" hidden>
+      <span class="resume-text" id="resumeText"></span>
+      <span class="resume-actions">
+        <button type="button" class="mini" id="resumeBtn">接着看</button>
+        <button type="button" class="mini" id="resumeDrop">丢掉</button>
+      </span>
+    </div>
+
+    <div class="hero">
+      <div class="hero-text">
+        <p class="eyebrow">没有调查，就没有发言权</p>
+        <h1>说一件真正<br />卡住你的事</h1>
+        <p class="sub">不写情绪，写事实：和谁、在什么场景、卡在哪个环节、你已经试过什么。越具体，拆出来的东西越能落地。</p>
+        <p class="hero-note"><span class="dot-mark"></span>一堆矛盾里，只有一条在牵着别的走</p>
+      </div>
+
+      <figure class="hero-figure" aria-hidden="true">
+        <svg viewBox="0 0 320 272" role="presentation">
+          <defs>
+            <pattern id="grain" width="15" height="15" patternUnits="userSpaceOnUse">
+              <circle cx="1" cy="1" r=".7" fill="#c9b894" opacity=".55" />
+            </pattern>
+            <marker id="arrow" viewBox="0 0 8 8" refX="6.4" refY="4" markerWidth="7" markerHeight="7" orient="auto">
+              <path d="M1 1 L6.4 4 L1 7" fill="none" stroke="#ab8b61" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+            </marker>
+          </defs>
+
+          <rect x="6" y="6" width="308" height="260" fill="#fbf7ee" stroke="#d9c9ad" />
+          <rect x="6" y="6" width="308" height="260" fill="url(#grain)" opacity=".5" />
+          <rect x="12" y="12" width="296" height="248" fill="none" stroke="#e6d9c1" stroke-dasharray="1 4" />
+
+          <circle cx="148" cy="132" r="63" fill="none" stroke="#cfbd9d" stroke-dasharray="2 5" />
+          <circle cx="148" cy="132" r="101" fill="none" stroke="#e3d6bf" stroke-dasharray="2 6" />
+
+          <g stroke="#bb9f77" stroke-width="1.1" marker-end="url(#arrow)">
+            <line x1="124" y1="113" x2="66" y2="70" />
+            <line x1="175" y1="122" x2="238" y2="75" />
+            <line x1="170" y1="157" x2="228" y2="203" />
+            <line x1="126" y1="151" x2="82" y2="193" />
+          </g>
+
+          <g fill="#f1e6d1" stroke="#b9986e" stroke-width="1">
+            <circle cx="52" cy="56" r="11" />
+            <circle cx="248" cy="64" r="8.5" />
+            <circle cx="238" cy="214" r="11" />
+            <circle cx="72" cy="204" r="7.5" />
+          </g>
+
+          <circle cx="148" cy="132" r="37" fill="none" stroke="#b02c22" stroke-opacity=".22" />
+          <circle cx="148" cy="132" r="32" fill="#b02c22" />
+          <text x="148" y="127" text-anchor="middle" font-size="11.5" fill="#fff3e6" letter-spacing="1">主要</text>
+          <text x="148" y="144" text-anchor="middle" font-size="11.5" fill="#fff3e6" letter-spacing="1">矛盾</text>
+
+          <text x="52" y="34" text-anchor="middle" font-size="10" fill="#a8906c" letter-spacing="2">次要</text>
+          <text x="238" y="238" text-anchor="middle" font-size="10" fill="#a8906c" letter-spacing="2">次要</text>
+        </svg>
+        <figcaption>主要矛盾一松，其余才跟着松</figcaption>
+      </figure>
+    </div>
+
+    <form class="ask-card" id="askForm" autocomplete="off">
+      <span class="card-corner" aria-hidden="true">来案</span>
+      <label class="field">
+        <span class="field-label">你的问题<em>只写事实与处境</em></span>
+        <textarea id="question" rows="5" maxlength="2000"
+          placeholder="例：我在现在的岗位干了五年，事情越来越杂，向上走却看不到位置；想走，又怕外面行情差。到底是该熬还是该走？"></textarea>
+      </label>
+      <div class="field-foot">
+        <span id="charCount">0 / 2000</span>
+        <span>Ctrl / ⌘ + Enter 提交</span>
+      </div>
+
+      <details class="more" id="moreBox">
+        <summary>补充背景（可选，但会明显提高准确度）</summary>
+        <div class="more-grid">
+          <label class="field">
+            <span class="field-label">你的位置</span>
+            <input type="text" id="role" maxlength="120" placeholder="例：部门里资历最老的一线主管，直接向总监汇报" />
+          </label>
+          <label class="field">
+            <span class="field-label">时间与资源限制</span>
+            <input type="text" id="limit" maxlength="160" placeholder="例：三个月内必须有结果；不能脱产；家里有房贷" />
+          </label>
+          <label class="field field-wide">
+            <span class="field-label">已经试过什么，结果如何</span>
+            <input type="text" id="tried" maxlength="300" placeholder="例：跟总监提过一次，被以“再沉淀”为由挡回来了；投过两家，都卡在终面" />
+          </label>
+        </div>
+      </details>
+
+      <div class="ask-actions">
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          <span>开始拆解</span>
+          <svg viewBox="0 0 16 16" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        </button>
+        <button type="button" class="btn btn-ghost" id="demoBtn">看一份示例</button>
+        <span class="hint" id="engineHint"></span>
+      </div>
+    </form>
+
+    <div class="howto">
+      <p class="howto-title"><span>拆解路径</span></p>
+      <ol class="flow">
+        <li class="flow-item">
+          <span class="flow-n">1</span>
+          <h4>抓主要矛盾</h4>
+          <p>一堆事里只有一件在牵着别的走。先把它挑出来，其余的才排得上序。</p>
+        </li>
+        <li class="flow-item">
+          <span class="flow-n">2</span>
+          <h4>看清主要方面</h4>
+          <p>矛盾的两方，谁在增强、谁在削弱。事情往哪边倒，由这一方决定。</p>
+        </li>
+        <li class="flow-item">
+          <span class="flow-n">3</span>
+          <h4>落到可检验的动作</h4>
+          <p>每一步配一个「怎样算对」的标准。判断错了就改，不靠自我打气。</p>
+        </li>
+      </ol>
+      <p class="howto-foot">方法来自《矛盾论》《实践论》—— <button type="button" class="link" data-nav="method">看完整方法</button></p>
+    </div>
+
+    <!-- 提问后展示的分析区 -->
+    <section class="analysis-wrap" id="analysisWrap" hidden>
+      <div class="report">
+        <div class="report-head">
+          <div class="report-kicker">
+            <span class="report-title">矛盾拆解</span>
+            <span class="report-no" id="caseTag">分析</span>
+          </div>
+          <div class="recap">
+            <span class="recap-label">案由</span>
+            <blockquote class="question-recap" id="questionRecap"></blockquote>
+          </div>
+          <div class="report-bar">
+            <span class="report-meta">
+              <span class="report-time" id="caseTime"></span>
+              <span class="task-progress" id="taskProgress" hidden></span>
+            </span>
+            <div class="analysis-tools">
+              <button class="mini is-stop" id="stopBtn" hidden>停止</button>
+              <button class="mini" id="copyBtn">复制</button>
+              <button class="mini" id="exportBtn">导出 Markdown</button>
+              <button class="mini" id="printBtn">打印 / PDF</button>
+              <button class="mini" id="reBtn" title="带着这段时间的新情况，把同一件事重新拆一遍">再拆一次</button>
+              <button class="mini" id="newBtn">再问一个</button>
+            </div>
+          </div>
+        </div>
+
+        <article class="analysis" id="analysisBody" role="region" aria-label="拆解结果"></article>
+
+        <div class="lint" id="lintBox" hidden></div>
+        <section class="compare" id="compareBox" hidden></section>
+
+        <div class="report-foot" id="reportFoot" hidden>
+          <span class="report-sign">按《矛盾论》《实践论》拆解 · 认识回到实践</span>
+          <span class="report-seal" aria-hidden="true">拆</span>
+        </div>
+      </div>
+
+      <div class="followup" id="followupBox">
+        <p class="followup-title">情况有变，或者想追问</p>
+        <form id="followForm" class="follow-form">
+          <textarea id="followInput" rows="2" maxlength="1200"
+            placeholder="补充一条新事实，或直接问：如果我这一步走不通怎么办？"></textarea>
+          <button class="btn btn-primary btn-sm" type="submit" id="followBtn">继续</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="followStop" hidden>停止</button>
+        </form>
+        <div class="follow-list" id="followList"></div>
+      </div>
+    </section>
+  </section>
+
+  <!-- ======================= 历史 ======================= -->
+  <section class="view" id="view-cases" hidden>
+    <div class="lede">
+      <p class="eyebrow">实践、认识、再实践</p>
+      <h1>我的分析</h1>
+      <p class="sub">同一件事过一段时间再看，往往能看出当时没看出的那一层。</p>
+    </div>
+    <div id="caseList" class="case-list"></div>
+    <p class="empty" id="caseEmpty" hidden>还没有记录。回到「提问」，先说一件卡住你的事。</p>
+  </section>
+
+  <!-- ======================= 方法 ======================= -->
+  <section class="view" id="view-method" hidden>
+    <div class="lede">
+      <p class="eyebrow">方法不是结论，是工具</p>
+      <h1>这套拆解从哪来</h1>
+      <p class="sub">《矛盾论》《实践论》里被反复使用、也确实管用的几条办法。看懂它，你以后不靠 AI 也能自己拆。</p>
+    </div>
+
+    <ol class="method-flow" aria-label="方法链条">
+      <li>调查事实</li>
+      <li>抓主要矛盾</li>
+      <li>定主要方面</li>
+      <li>找转化条件</li>
+      <li>实践检验</li>
+    </ol>
+
+    <div class="method-grid">
+      <article class="method-card">
+        <span class="num">1</span>
+        <h3>先调查，再判断</h3>
+        <p>没有调查就没有发言权。把「我知道的事实」和「我猜的」分开写。多数决策错误不是推理错了，是事实本身就没搞清。</p>
+        <p class="src">《反对本本主义》</p>
+      </article>
+      <article class="method-card">
+        <span class="num">2</span>
+        <h3>找主要矛盾</h3>
+        <p>一堆问题里必有一条在牵着别的走。抓住它，其余会跟着松；抓错了，力气全花在次要的地方。</p>
+        <p class="src">《矛盾论》</p>
+      </article>
+      <article class="method-card">
+        <span class="num">3</span>
+        <h3>看矛盾的主要方面</h3>
+        <p>一对矛盾里必有一方占主导，事情的性质由这一方决定。判断走向，就要看这个主导方在增强还是在削弱。</p>
+        <p class="src">《矛盾论》</p>
+      </article>
+      <article class="method-card">
+        <span class="num">4</span>
+        <h3>分清内因与外因</h3>
+        <p>外因是变化的条件，内因是变化的根据，外因通过内因起作用。只怪环境，等于宣布自己无解。</p>
+        <p class="src">《矛盾论》</p>
+      </article>
+      <article class="method-card">
+        <span class="num">5</span>
+        <h3>找转化的条件</h3>
+        <p>矛盾会转化，但要条件。空谈「换个心态」不是转化。要问：具体哪个条件变了，主次才会易位。</p>
+        <p class="src">《矛盾论》</p>
+      </article>
+      <article class="method-card">
+        <span class="num">6</span>
+        <h3>用实践检验</h3>
+        <p>认识回到实践里去检验，错了就改。每一步配一个「怎样算对、怎样算错」的标准；做完把实际结果记回来，下一次判断才有依据。</p>
+        <p class="src">《实践论》</p>
+      </article>
+    </div>
+
+    <div class="note-box">
+      <h3>这个工具不做什么</h3>
+      <p>它不替你决定人生，不评判你的对错，也不提供医疗、法律、心理危机处置的专业意见。它只做一件事：把你脑子里的那团东西，摆成一张能看清结构的图。</p>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>矛盾分析室 · 一纸一案，一案一拆</span>
+  <span id="footEngine"></span>
+</footer>
+
+<!-- ======================= 设置 ======================= -->
+<dialog id="settingsDialog" class="dialog">
+  <form method="dialog" class="dialog-inner" id="settingsForm">
+    <h2>模型设置</h2>
+    <p class="dialog-sub">分析需要一个大模型。填你自己的接口即可，Key 只存在这台设备的浏览器里，不经过任何服务器保存。</p>
+
+    <label class="field">
+      <span class="field-label">接口地址</span>
+      <input type="text" id="cfgEndpoint" placeholder="https://api.deepseek.com/v1/chat/completions" />
+    </label>
+    <label class="field">
+      <span class="field-label">模型名称</span>
+      <input type="text" id="cfgModel" placeholder="deepseek-chat" />
+    </label>
+    <label class="field">
+      <span class="field-label">API Key</span>
+      <input type="password" id="cfgKey" placeholder="sk-..." />
+    </label>
+
+    <div class="preset-row">
+      <span>快速填充：</span>
+      <button type="button" class="chip" data-preset="deepseek">DeepSeek</button>
+      <button type="button" class="chip" data-preset="openai">OpenAI</button>
+      <button type="button" class="chip" data-preset="moonshot">Moonshot</button>
+      <button type="button" class="chip" data-preset="custom">自定义</button>
+    </div>
+
+    <p class="dialog-tip">只要接口兼容 OpenAI 的 <code>/chat/completions</code> 就能用。国内的 DeepSeek、月之暗面、通义、智谱都支持。</p>
+    <p class="dialog-tip">连本地模型（Ollama / LM Studio）时，启动要加环境变量 <code>MAODUN_ALLOW_PRIVATE=1</code>，否则服务会拒绝把请求转发到内网地址。</p>
+
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-ghost" id="cancelSettings">取消</button>
+      <button type="button" class="btn btn-primary" id="saveSettings">保存</button>
+    </div>
+  </form>
+</dialog>
+
+<!-- ======================= 再拆一次 ======================= -->
+<dialog id="reDialog" class="dialog">
+  <form method="dialog" class="dialog-inner">
+    <h2>再拆一次</h2>
+    <p class="dialog-sub">同一个问题，隔一段时间重拆。上次的判断只作对照，不要求这次沿用。</p>
+    <label class="field">
+      <span class="field-label">这期间发生了什么<em>可留空</em></span>
+      <textarea id="reInput" rows="3" maxlength="600"
+        placeholder="例：拿到了一个报价，但比预期低；总监换人了；那个项目黄了。"></textarea>
+    </label>
+    <p class="dialog-tip" id="reCarry"></p>
+    <p class="dialog-tip">重拆会生成一份新的完整分析，旧的那份仍然留在「我的分析」里，两份并排对照。</p>
+    <div class="dialog-actions">
+      <button type="button" class="btn btn-ghost" id="reCancel">取消</button>
+      <button type="button" class="btn btn-primary" id="reSubmit">重新拆解</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="./assets/markdown.js"></script>
+<script src="./assets/app.js"></script>
+</body>
+</html>

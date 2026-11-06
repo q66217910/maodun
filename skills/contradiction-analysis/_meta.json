@@ -1,0 +1,10 @@
+{
+  "name": "contradiction-analysis",
+  "displayName": "矛盾分析",
+  "version": "1.2.0",
+  "description": "用《矛盾论》《实践论》的方法拆解现实问题：清点事实、列矛盾清单、找出主要矛盾与主要方面、区分内因外因、给出转化条件和可检验的行动。",
+  "author": "张德",
+  "tags": ["矛盾论", "实践论", "问题分析", "决策", "思考框架"],
+  "entry": "SKILL.md",
+  "agent_created": true
+}

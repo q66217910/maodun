@@ -1,0 +1,14 @@
+{
+  "name": "maodun-contradiction-lab",
+  "version": "1.2.0",
+  "private": true,
+  "description": "按矛盾论方法拆解现实问题的提问网站",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/markdown.test.js",
+    "test:e2e": "node tests/e2e-forward.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
